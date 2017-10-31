@@ -24,7 +24,7 @@ PPTBox.prototype = {
       html += "</div>";
       document.write(html);
     },
-    
+
     _init:function () {
         let picStyle = "";
         let eventString =  "PPTBoxHelper.instance["+this.uid+"]";
@@ -88,7 +88,7 @@ PPTBox.prototype = {
             this._autoplay = setInterval(eventString,this.autoplayer*1000);
         }
     },
-    
+
     clickPic:function (idx) {
         let param = this._box[idx];
         if (param.hred && param.href != ""){
