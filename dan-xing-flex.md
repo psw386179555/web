@@ -29,7 +29,8 @@
 
 ## 3.容器的属性
 
-* flex-direction  （主轴的方向（即项目的排列方向）。）
+* flex-direction
+  （主轴的方向（即项目的排列方向）。）
 
 ```css
 .box {
@@ -65,8 +66,25 @@
 }
 ```
 
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png)
+
 * align-items
+
+```
+.box {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png)
+
 * align-content
 
+```
+.box {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
 
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png)
 
