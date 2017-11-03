@@ -1,5 +1,3 @@
-
-
 [swiper](http://www.swiper.com.cn/ "swiper官网")
 
 ```
@@ -27,28 +25,28 @@
 
 ```js
  <script>
-	window.onload = function() {
+    window.onload = function() {
     var swiper = new Swiper('.swiper-container',{
-		autoplay:3000,
-		speed:1000,
-		autoplayDisableOnInteraction : false,
-		loop:true,
-		centeredSlides : true,
-		slidesPerView:2,
+        autoplay:3000,
+        speed:1000,
+        autoplayDisableOnInteraction : false,
+        loop:true,
+        centeredSlides : true,
+        slidesPerView:2,
         pagination : '.swiper-pagination',
-		paginationClickable:true,
-		prevButton:'.swiper-button-prev',
+        paginationClickable:true,
+        prevButton:'.swiper-button-prev',
         nextButton:'.swiper-button-next',
-		onInit:function(swiper){
-			swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
-			},
+        onInit:function(swiper){
+            swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
+            },
         breakpoints: { 
                 668: {
                     slidesPerView: 1,
                  }
             }
-		});
-		};
+        });
+        };
     </script>
 ```
 
