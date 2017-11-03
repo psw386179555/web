@@ -140,9 +140,157 @@
 
 # 11.transform
 
-translate\(x,y\)
+* translate\(x,y\)平移
+* scale\(x,y\)缩放
+* rotate\(angle\)旋转
+* skew\(x-angle,y-angle\)倾斜
 
-scale\(x,y\)
+# 12.@keyframes and animation
+
+```css
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+@-webkit-keyframes mymove /* Safari 和 Chrome */
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+@-o-keyframes mymove /* Opera */
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+
+
+
+@keyframes mymove
+{
+0%   {top:0px;}
+25%  {top:200px;}
+50%  {top:100px;}
+75%  {top:200px;}
+100% {top:0px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+0%   {top:0px;}
+25%  {top:200px;}
+50%  {top:100px;}
+75%  {top:200px;}
+100% {top:0px;}
+}
+
+@-webkit-keyframes mymove /* Safari 和 Chrome */
+{
+0%   {top:0px;}
+25%  {top:200px;}
+50%  {top:100px;}
+75%  {top:200px;}
+100% {top:0px;}
+}
+
+@-o-keyframes mymove /* Opera */
+{
+0%   {top:0px;}
+25%  {top:200px;}
+50%  {top:100px;}
+75%  {top:200px;}
+100% {top:0px;}
+}
+```
+
+语法
+
+```
+@keyframes animationname {keyframes-selector {css-styles;}}
+```
+
+动画选择，设置动画
+
+| animation-name | 规定@keyframes的动画名 |
+| :--- | :--- |
+
+
+| animation-duration | 规定动画完成一个周期所花费的秒或毫秒。默认是 0。 |
+| :--- | :--- |
+
+
+| animation-timing-function | 规定动画的速度曲线。默认是 "ease"。 |
+| :--- | :--- |
+
+
+| animation-delay | 规定动画何时开始。默认是 0。 |
+| :--- | :--- |
+
+
+| animation-iteration-count | 规定动画被播放的次数。默认是 1。 |
+| :--- | :--- |
+
+
+| animation-direction | 规定动画是否在下一周期逆向地播放。默认是 "normal"。 |
+| :--- | :--- |
+
+
+| animation-play-state | 规定动画是否正在运行或暂停。默认是 "running"。 |
+| :--- | :--- |
+
+
+| animation-fill-mode | 规定对象动画时间之外的状态。 |
+| :--- | :--- |
+
+
+  
+
+
+```css
+div
+{
+animation-name: myfirst;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-delay: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-play-state: running;
+/* Firefox: */
+-moz-animation-name: myfirst;
+-moz-animation-duration: 5s;
+-moz-animation-timing-function: linear;
+-moz-animation-delay: 2s;
+-moz-animation-iteration-count: infinite;
+-moz-animation-direction: alternate;
+-moz-animation-play-state: running;
+/* Safari 和 Chrome: */
+-webkit-animation-name: myfirst;
+-webkit-animation-duration: 5s;
+-webkit-animation-timing-function: linear;
+-webkit-animation-delay: 2s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-direction: alternate;
+-webkit-animation-play-state: running;
+/* Opera: */
+-o-animation-name: myfirst;
+-o-animation-duration: 5s;
+-o-animation-timing-function: linear;
+-o-animation-delay: 2s;
+-o-animation-iteration-count: infinite;
+-o-animation-direction: alternate;
+-o-animation-play-state: running;
+}
+```
 
 
 
