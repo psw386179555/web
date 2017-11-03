@@ -53,3 +53,85 @@
 
 在 CSS 中，width 和 height 指的是内容区域的宽度和高度。增加内边距、边框和外边距不会影响内容区域的尺寸，但是会增加元素框的总尺寸。
 
+# 6.line-height
+
+| normal | 默认。设置合理的行间距。 |
+| :--- | :--- |
+| number | 设置数字，此数字会与当前的字体尺寸相乘来设置行间距。 |
+| length | 设置固定的行间距。 |
+| % | 基于当前字体尺寸的百分比行间距。 |
+| inherit | 规定应该从父元素继承 line-height 属性的值。 |
+
+# 7.vertical-align
+
+| baseline | 默认。元素放置在父元素的基线上。 |
+| :--- | :--- |
+| sub | 垂直对齐文本的下标。 |
+| super | 垂直对齐文本的上标 |
+| top | 把元素的顶端与行中最高元素的顶端对齐 |
+| text-top | 把元素的顶端与父元素字体的顶端对齐 |
+| middle | 把此元素放置在父元素的中部。 |
+| bottom | 把元素的顶端与行中最低的元素的顶端对齐。 |
+| text-bottom | 把元素的底端与父元素字体的底端对齐。 |
+| length |  |
+| % | 使用 "line-height" 属性的百分比值来排列此元素。允许使用负值。 |
+| inherit | 规定应该从父元素继承 vertical-align 属性的值。 |
+
+# 8.white-space
+
+| normal | 默认。空白会被浏览器忽略。 |
+| :--- | :--- |
+| pre | 空白会被浏览器保留。其行为方式类似 HTML 中的 &lt;pre&gt; 标签。 |
+| nowrap | 文本不会换行，文本会在在同一行上继续，直到遇到 &lt;br&gt; 标签为止。 |
+| pre-wrap | 保留空白符序列，但是正常地进行换行。 |
+| pre-line | 合并空白符序列，但是保留换行符。 |
+| inherit | 规定应该从父元素继承 white-space 属性的值。 |
+
+# 9.word-break
+
+| normal | 使用浏览器默认的换行规则。 |
+| :--- | :--- |
+| break-all | 允许在单词内换行。 |
+| keep-all | 只能在半角空格或连字符处换行。 |
+
+---
+
+# 10.background
+
+* background-color 规定要使用的背景颜色。
+* background-position  规定背景图像的位置
+
+| top lefttop centertop rightcenter leftcenter centercenter rightbottom leftbottom centerbottom right | 如果您仅规定了一个关键词，那么第二个值将是"center"。默认值：0% 0%。 |
+| :--- | :--- |
+| x% y% | 第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果您仅规定了一个值，另一个值将是 50%。 |
+| xpos ypos | 第一个值是水平位置，第二个值是垂直位置。左上角是 0 0。单位是像素 \(0px 0px\) 或任何其他的 CSS 单位。如果您仅规定了一个值，另一个值将是50%。您可以混合使用 % 和 position 值。 |
+
+* background-size  规定背景图片的尺寸。
+
+| 设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 | length |
+| :--- | :--- |
+
+
+| percentage | 以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
+| :--- | :--- |
+
+
+| cover | 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分也许无法显示在背景定位区域中。 |
+| :--- | :--- |
+
+
+| contain | 把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。 |
+| :--- | :--- |
+
+
+* background-repeat  规定如何重复背景图像。
+* background-origin  规定背景图片的定位区域。
+* background-clip  规定背景的绘制区域。
+* background-attachment   规定背景图像是否固定或者随着页面的其余部分滚动。
+* background-image    规定要使用的背景图像。
+  
+
+
+
+
+
