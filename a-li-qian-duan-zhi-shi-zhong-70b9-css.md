@@ -138,5 +138,11 @@
 * background-attachment   规定背景图像是否固定或者随着页面的其余部分滚动。
 * background-image    规定要使用的背景图像。
 
+# 11.transform
+
+translate\(x,y\)
+
+scale\(x,y\)
+
 
 
