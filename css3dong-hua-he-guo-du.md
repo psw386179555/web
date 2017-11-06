@@ -90,9 +90,9 @@ to {background: yellow;}
 div
 {
 animation: myfirst 5s;
--moz-animation: myfirst 5s;	/* Firefox */
--webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
--o-animation: myfirst 5s;	/* Opera */
+-moz-animation: myfirst 5s;    /* Firefox */
+-webkit-animation: myfirst 5s;    /* Safari 和 Chrome */
+-o-animation: myfirst 5s;    /* Opera */
 }
 ```
 
@@ -127,7 +127,7 @@ animation: myfirst 5s;
 25%  {background: yellow;}
 50%  {background: blue;}
 100% {background: green;}
-}属性
+}
 ```
 
 | 属性 | 描述 |
