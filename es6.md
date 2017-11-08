@@ -5,7 +5,7 @@
 
 # 2.变量解构赋值
 
-数组解构赋值
+## 数组解构赋值
 
 ```js
 let [foo, [[bar], baz]] = [1, [[2], 3]];
@@ -30,7 +30,7 @@ y // undefined
 z // []
 ```
 
-对象的解构赋值
+## 对象的解构赋值
 
 ```js
 let { bar, foo } = { foo: "aaa", bar: "bbb" };
@@ -49,7 +49,7 @@ f // 'hello'
 l // 'world'
 ```
 
-字符串的解构赋值
+## 字符串的解构赋值
 
 ```js
 const [a, b, c, d, e] = 'hello';
@@ -64,7 +64,7 @@ let {length : len} = 'hello';
 len // 5
 ```
 
-数组和布尔解构赋值
+## 数组和布尔解构赋值
 
 ```js
 let {toString: s} = 123;
@@ -74,7 +74,7 @@ let {toString: s} = true;
 s === Boolean.prototype.toString // true
 ```
 
-用途
+## 用途
 
 **（1）交换变量的值**
 
@@ -85,7 +85,6 @@ let y = 2;
 [x, y] = [y, x];
 ```
 
-  
 **（2）从函数返回多个值**
 
 ```js
@@ -105,7 +104,6 @@ function example() {
 let { foo, bar } = example();
 ```
 
-  
 **（3）函数参数的定义**
 
 ```js
@@ -118,7 +116,6 @@ function f({x, y, z}) { ... }
 f({z: 3, y: 2, x: 1});
 ```
 
-  
 **（4）提取JSON数据**
 
 ```js
@@ -134,7 +131,6 @@ console.log(id, status, number);
 // 42, "OK", [867, 5309]
 ```
 
-  
 **（5）函数参数的默认值**
 
 ```js
@@ -151,7 +147,6 @@ jQuery.ajax = function (url, {
 };
 ```
 
-  
 **（6）遍历Map结构**
 
 ```js
@@ -164,13 +159,128 @@ for (let [key, value] of map) {
 }
 ```
 
-  
 **（7）输入模块的指定方法**
 
 ```js
 const { SourceMapConsumer, SourceNode } = require("source-map");
 ```
 
-  
+# 3.字符串拓展
 
+## 字符串的遍历器接口 {#字符串的遍历器接口}
+
+```js
+for (let codePoint of 'foo') {
+  console.log(codePoint)
+}
+// "f"
+// "o"
+// "o"
+```
+
+## includes\(\), startsWith\(\), endsWith\(\) {#includes-startsWith-endsWith}
+
+* **includes\(\)**：返回布尔值，表示是否找到了参数字符串。
+* **startsWith\(\)**：返回布尔值，表示参数字符串是否在原字符串的头部。
+* **endsWith\(\)**：返回布尔值，表示参数字符串是否在原字符串的尾部。
+
+```js
+let s = 'Hello world!';
+
+s.startsWith('Hello') // true
+s.endsWith('!') // true
+s.includes('o') // true
+
+
+//这三个方法都支持第二个参数，表示开始搜索的位置。
+
+let s = 'Hello world!';
+
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5) // true
+s.includes('Hello', 6) // false
+```
+
+## 模板字符串 {#模板字符串}
+
+* 模板字符串中嵌入变量，需要将变量名写在`${}`之中。
+* 大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。
+
+```js
+$('#result').append(`
+  There are <b>${basket.count}</b> items
+   in your basket, <em>${basket.onSale}</em>
+  are on sale!
+`);
+```
+
+# 4.函数的扩展
+
+## 函数参数的默认值
+
+```js
+function log(x, y = 'World') {
+  console.log(x, y);
+}
+
+log('Hello') // Hello World
+log('Hello', 'China') // Hello China
+log('Hello', '') // Hello
+```
+
+## rest 参数 {#rest-参数}
+
+ES6 引入 rest 参数（形式为`...变量名`），用于获取函数的多余参数，这样就不需要使用
+
+`arguments`对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+
+```js
+function add(...values) {
+  let sum = 0;
+
+  for (var val of values) {
+    sum += val;
+  }
+
+  return sum;
+}
+
+add(2, 5, 3) // 10
+
+//上面代码的add函数是一个求和函数，利用 rest 参数，可以向该函数传入任意数目的参数。
+```
+
+## name 属性 {#name-属性}
+
+函数的`name`属性，返回该函数的函数名。如果将一个匿名函数赋值给一个变量，ES5 的
+
+`name`属性，会返回空字符串，而 ES6 的`name`属性会返回实际的函数名。
+
+```js
+var f = function () {};
+
+// ES5
+f.name // ""
+
+// ES6
+f.name // "f"
+```
+
+## 箭头函数 {#箭头函数}
+
+ES6 允许使用“箭头”（`=>`）定义函数。
+
+```js
+var f = () => 5;
+// 等同于
+var f = function () { return 5 };
+
+var sum = (num1, num2) => num1 + num2;
+// 等同于
+var sum = function(num1, num2) {
+  return num1 + num2;
+};
+```
+
+箭头函数可以与变量解构结合使用。
 
