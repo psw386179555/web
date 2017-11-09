@@ -137,6 +137,110 @@ for (let item of set.entries()) {
 // ["red", "red"]
 // ["green", "green"]
 // ["blue", "blue"]
+
+
+set = new Set([1, 4, 9]);
+set.forEach((value, key) => console.log(key + ' : ' + value))
+```
+
+## WeakSet {#WeakSet}
+
+### 含义 {#含义}
+
+WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有两个区别。
+
+首先，WeakSet 的成员只能是对象，而不能是其他类型的值。
+
+## Map {#Map}
+
+### 含义和基本用法 {#含义和基本用法}
+
+JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+
+上面代码原意是将一个 DOM 节点作为对象`data`的键，但是由于对象只接受字符串作为键名，所以`element`被自动转为字符串`[object HTMLDivElement]`。
+
+为了解决这个问题，**ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。**也就是说，Object 结构提供了“字符串—值”的对应，Map结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+
+### 实例的属性和操作方法 {#实例的属性和操作方法}
+
+Map 结构的实例有以下属性和操作方法。
+
+**（1）size属性**
+
+`size`属性返回 Map 结构的成员总数。
+
+**（2）set\(key, value\)**
+
+`set`方法设置键名`key`对应的键值为`value`，然后返回整个 Map 结构。如果`key`已经有值，则键值会被更新，否则就新生成该键。**`set`方法返回的是当前的`Map`对象，因此可以采用链式写法。**
+
+**（3）get\(key\)**
+
+`get`方法读取`key`对应的键值，如果找不到`key`，返回`undefined`。
+
+**（4）has\(key\)**
+
+`has`方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
+
+**（5）delete\(key\)**
+
+`delete`方法删除某个键，返回`true`。如果删除失败，返回`false`。
+
+**（6）clear\(\)**
+
+`clear`方法清除所有成员，没有返回值。
+
+### 遍历方法 {#遍历方法}
+
+Map 结构原生提供三个遍历器生成函数和一个遍历方法。
+
+* `keys()`
+  ：返回键名的遍历器。
+* `values()`
+  ：返回键值的遍历器。
+* `entries()`
+  ：返回所有成员的遍历器。
+* `forEach()`
+  ：遍历 Map 的所有成员。
+
+需要特别注意的是，**Map 的遍历顺序就是插入顺序**。
+
+```
+const map = new Map([
+  ['F', 'no'],
+  ['T',  'yes'],
+]);
+
+for (let key of map.keys()) {
+  console.log(key);
+}
+// "F"
+// "T"
+
+for (let value of map.values()) {
+  console.log(value);
+}
+// "no"
+// "yes"
+
+for (let item of map.entries()) {
+  console.log(item[0], item[1]);
+}
+// "F" "no"
+// "T" "yes"
+
+// 或者
+for (let [key, value] of map.entries()) {
+  console.log(key, value);
+}
+// "F" "no"
+// "T" "yes"
+
+// 等同于使用map.entries()
+for (let [key, value] of map) {
+  console.log(key, value);
+}
+// "F" "no"
+// "T" "yes"
 ```
 
 
