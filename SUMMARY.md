@@ -16,4 +16,5 @@
 * [es6 set map数据结构](es6-set-mapshu-ju-jie-gou.md)
 * [html5](html5.md)
 * [html5 canvas ](html5-canvas.md)
+* [html5 web存储](html5-geolocation.md)
 
